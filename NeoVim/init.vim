@@ -1,12 +1,27 @@
-let mapleader="\<Space>"
 
+" General
+set clipboard+=unnamedplus
+
+" Ui
 set number
-"Syntax highlighting
+set relativenumber
 syntax on
 
-set tabstop=4
-set softtabstop=4
-set autoindent
+" Indentation
 set expandtab
+set autoindent
+filetype plugin indent on
 
-set clipboard+=unnamedplus
+
+" Keyboard mappings
+no <down> <Nop>
+no <left> <Nop>
+no <right> <Nop>
+no <up> <Nop>
+
+ino <down> <Nop>
+ino <left> <Nop>
+ino <right> <Nop>
+ino <up> <Nop>
+
+let mapleader="\<Space>"
