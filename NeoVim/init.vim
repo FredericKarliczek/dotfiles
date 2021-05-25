@@ -1,19 +1,23 @@
 " Plugins
 call plug#begin('~/appdata/local/nvim/plugged')
-  "" Autocomplete
-  Plug 'neovim/nvim-lspconfig'
-  "" Status Line
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'tomasiser/vim-code-dark'
-  "" VimWiki
-  Plug 'vimwiki/vimwiki'
+    "" Autocomplete
+    Plug 'neovim/nvim-lspconfig'
+    "" Status Line
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'tomasiser/vim-code-dark'
+    "" VimWiki
+    Plug 'vimwiki/vimwiki'
+
+    "" Keep Tmux statusline in sync with vim
+    Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
 " Airline configuration
 let g:airline_powerline_fonts = v:true
-let g:airline_theme = 'vim-code-dark'
+let g:airline_theme = 'dark-plus'
+
 
 " VimWiki configuration
 let g:vimwiki_list = [{'path': 'C:\DATA\Git Repositorys (private)\DigitalBrain\vaults\Digital Garden\', 'syntax': 'markdown', 'ext': '.md'}]

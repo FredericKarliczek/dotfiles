@@ -13,7 +13,12 @@ if [[ ! -d "$nvim_config_dir" ]]; then
         echo "Config dir not existing. Creating dir"
         mkdir "$nvim_config_dir"
 fi
-ln -svf "$SCRIPT_DIR/NeoVim/init.vim" "$nvim_config_dir"
+ln -svf "$SCRIPT_DIR/NeoVim/init.lua" "$nvim_config_dir"
+ln -svf "$SCRIPT_DIR/NeoVim/lua/plugins.lua" "$nvim_config_dir/lua"
+ln -svf "$SCRIPT_DIR/NeoVim/lua/settings.lua" "$nvim_config_dir/lua"
+ln -svf "$SCRIPT_DIR/NeoVim/lua/statusline.lua" "$nvim_config_dir/lua"
+ln -svf "$SCRIPT_DIR/NeoVim/lua/keybindings.lua" "$nvim_config_dir/lua"
+
 
 echo "Creating symlink for tmux config"
 ln -svf $SCRIPT_DIR/Tmux/.tmux.conf ~
