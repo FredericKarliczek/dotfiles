@@ -18,17 +18,19 @@ paq 'nvim-telescope/telescope.nvim'
 
 paq 'windwp/nvim-autopairs'
 
+paq 'ratfactor/vviki'
+
 paq 'tpope/vim-fugitive'
 paq 'vim-airline/vim-airline'
 paq 'vim-airline/vim-airline-themes'
-paq 'vimwiki/vimwiki'
 paq 'edkolev/tmuxline.vim'
 paq 'tpope/vim-surround'
 paq 'easymotion/vim-easymotion'
 paq 'preservim/nerdtree'
 -- colorschemes
 paq 'cocopon/iceberg.vim'
-paq 'tomasiser/vim-code-dark'
+-- paq 'tomasiser/vim-code-dark'
+paq 'FredericKarliczek/vim-code-dark'
 paq 'drewtempelmeyer/palenight.vim'
 paq 'morhetz/gruvbox'
 paq 'sainnhe/gruvbox-material'
@@ -110,6 +112,6 @@ require('completion-nvim')
 
 -- ### PLUGIN CONFIGURATIONS
 require('telescope-config')
-require('vimwiki-config')
+require('vviki-config')
 require('nerdtree-config')
 require('nvim-autopairs-config')
