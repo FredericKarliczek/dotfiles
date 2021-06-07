@@ -66,7 +66,7 @@ local M = {}
 M.search_dotfiles = function()
     require("telescope.builtin").find_files({
         prompt_title = "< VimRC >",
-	cwd = "C:/data/Git Repositorys (private)/dotfiles/NeoVim/",
+	cwd = "C:/DATA/Git/private/dotfiles/NeoVim/",
     })
 end
 
