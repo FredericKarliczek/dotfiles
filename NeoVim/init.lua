@@ -18,7 +18,10 @@ paq 'nvim-telescope/telescope.nvim'
 
 paq 'windwp/nvim-autopairs'
 
-paq 'ratfactor/vviki'
+paq 'vimwiki/vimwiki'
+-- paq 'michal-h21/vim-zettel'
+paq 'junegunn/fzf'
+paq 'junegunn/fzf.vim'
 
 paq 'tpope/vim-fugitive'
 paq 'vim-airline/vim-airline'
@@ -26,16 +29,12 @@ paq 'vim-airline/vim-airline-themes'
 paq 'edkolev/tmuxline.vim'
 paq 'tpope/vim-surround'
 paq 'easymotion/vim-easymotion'
-paq 'preservim/nerdtree'
 -- colorschemes
-paq 'cocopon/iceberg.vim'
 -- paq 'tomasiser/vim-code-dark'
 paq 'FredericKarliczek/vim-code-dark'
-paq 'drewtempelmeyer/palenight.vim'
-paq 'morhetz/gruvbox'
-paq 'sainnhe/gruvbox-material'
 
-paq 'famiu/nvim-reload'
+paq 'SirVer/ultisnips'
+paq 'hunza/vim-snippets'
 
 -- ### SETTINGS 
 local global = vim.o
@@ -54,10 +53,12 @@ global.clipboard = 'unnamedplus'
 --- window options
 window.number = true
 window.relativenumber = true
+window.colorcolumn = '+1'
 
 --- buffer options
 buffer.syntax = 'ON'
 buffer.undofile = true
+buffer.textwidth = 80
 
 ---- indentation
 buffer.tabstop = 4
@@ -112,6 +113,6 @@ require('completion-nvim')
 
 -- ### PLUGIN CONFIGURATIONS
 require('telescope-config')
-require('vviki-config')
+require('vimwiki-config')
 require('nerdtree-config')
 require('nvim-autopairs-config')

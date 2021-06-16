@@ -60,13 +60,23 @@ map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', options)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', options)
 map('n', '<leader>fvc', ':lua require("telescope-config").search_dotfiles()<CR>', options)
 map('n', '<leader>fo', ':lua require("telescope.builtin").oldfiles()<CR>', options)
-
+map('n', '<leader>fw', ':lua require("telescope-config").search_wikifiles()<CR>', options)
 
 local M = {}
+
+local dotfilesPath = "C:/DATA/Git/private/dotfiles/NeoVim/"
 M.search_dotfiles = function()
     require("telescope.builtin").find_files({
         prompt_title = "< VimRC >",
-	cwd = "C:/DATA/Git/private/dotfiles/NeoVim/",
+	cwd = dotfilesPath,
+    })
+end
+
+local wikiPath = 'C:/DATA/Git/private/digital_garden'
+M.search_wikifiles = function()
+    require("telescope.builtin").find_files({
+        prompt_title = "< VimRC >",
+	cwd = wikiPath,
     })
 end
 
