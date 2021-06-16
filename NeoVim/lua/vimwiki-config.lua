@@ -1,6 +1,6 @@
 vim.g.vimwiki_list = {
             {
-                path = 'C:/DATA/Git/private/digital_garden',
+                path = '~/digital_garden',
                 syntax = 'markdown',
                 ext = '.md',
             }
