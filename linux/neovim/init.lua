@@ -32,6 +32,7 @@ paq 'easymotion/vim-easymotion'
 -- colorschemes
 -- paq 'tomasiser/vim-code-dark'
 paq 'FredericKarliczek/vim-code-dark'
+paq 'morhetz/gruvbox'
 
 paq 'SirVer/ultisnips'
 paq 'hunza/vim-snippets'
