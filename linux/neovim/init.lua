@@ -24,8 +24,8 @@ paq 'junegunn/fzf'
 paq 'junegunn/fzf.vim'
 
 -- paq 'tpope/vim-fugitive'
-paq 'vim-airline/vim-airline'
-paq 'vim-airline/vim-airline-themes'
+--paq 'vim-airline/vim-airline'
+--paq 'vim-airline/vim-airline-themes'
 paq 'edkolev/tmuxline.vim'
 paq 'tpope/vim-surround'
 paq 'easymotion/vim-easymotion'
@@ -55,6 +55,7 @@ global.clipboard = 'unnamedplus'
 window.number = true
 window.relativenumber = true
 window.colorcolumn = '+1'
+window.scrolloff = 8
 
 --- buffer options
 buffer.syntax = 'ON'
@@ -69,7 +70,7 @@ vim.api.nvim_command('filetype indent on')
 
 vim.api.nvim_command('filetype plugin on')
 --- colorscheme
-vim.api.nvim_command('colorscheme codedark')
+vim.api.nvim_command('colorscheme gruvbox')
 
 -- ### KEYMAPPING 
 local map = vim.api.nvim_set_keymap
