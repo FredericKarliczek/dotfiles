@@ -3,6 +3,7 @@ call plug#begin(stdpath('data') . '/plugged')
     "" Autocomplete
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/lsp_extensions.nvim'
+    Plug 'kabouzeid/nvim-lspinstall'
 
     " Install nvim-cmp
     Plug 'hrsh7th/nvim-cmp'

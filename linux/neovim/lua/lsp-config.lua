@@ -34,23 +34,9 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
+require'lspinstall'.setup() -- important
 
-local pid = vim.fn.getpid()
--- On linux/darwin if using a release build, otherwise under scripts/OmniSharp(.Core)(.cmd)
-local omnisharp_bin = "/home/fka/language-servers/omnisharp/run" 
--- on Windows
--- local omnisharp_bin = "/path/to/omnisharp/OmniSharp.exe"
-require'lspconfig'.omnisharp.setup{
-    cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
-}
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{}
+end
