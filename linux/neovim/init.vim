@@ -2,8 +2,18 @@
 call plug#begin(stdpath('data') . '/plugged')
     "" Autocomplete
     Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
     Plug 'nvim-lua/lsp_extensions.nvim'
+    Plug 'kabouzeid/nvim-lspinstall'
+
+    " Install nvim-cmp
+    Plug 'hrsh7th/nvim-cmp'
+
+    " Install snippet engine (This example installs [hrsh7th/vim-vsnip](https://github.com/hrsh7th/vim-vsnip))
+    Plug 'hrsh7th/vim-vsnip'
+
+    " Install the buffer completion source
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-nvim-lsp'
     
     Plug 'windwp/nvim-autopairs'
     Plug 'tpope/vim-surround'
@@ -66,6 +76,8 @@ autocmd BufEnter * lua require'completion'.on_attach()
 
 lua << EOF
 -- ### PLUGIN CONFIGURATIONS
+require('lsp-config')
+require('nvim-cmp-config')
 require('telescope-config')
 require('vimwiki-config')
 require('nerdtree-config')
