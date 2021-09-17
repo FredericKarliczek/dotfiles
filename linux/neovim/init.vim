@@ -33,7 +33,7 @@ call plug#end()
 " VimWiki configuration
 let g:vimwiki_list = [{'path': 'C:\DATA\Git Repositorys (private)\DigitalBrain\vaults\Digital Garden\', 'syntax': 'markdown', 'ext': '.md'}]
 
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'codedark'
 
 " General
 set clipboard+=unnamedplus
@@ -43,7 +43,7 @@ set noswapfile
 set number
 set relativenumber
 syntax on
-colorscheme gruvbox
+colorscheme codedark
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
