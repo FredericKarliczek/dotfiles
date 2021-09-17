@@ -4,6 +4,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/lsp_extensions.nvim'
     Plug 'kabouzeid/nvim-lspinstall'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " Install nvim-cmp
     Plug 'hrsh7th/nvim-cmp'
@@ -75,6 +76,7 @@ lua << EOF
 -- ### PLUGIN CONFIGURATIONS
 require('lsp-config')
 require('nvim-cmp-config')
+require('nvim-treesitter-config')
 require('telescope-config')
 require('vimwiki-config')
 require('nerdtree-config')
