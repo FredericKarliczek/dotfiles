@@ -3,7 +3,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Create backup dir
-DOTFILES_BACKUP_DIR="~/.dotfiles_backup"
+DOTFILES_BACKUP_DIR="~/.dotfiles_backup/"
 if [[ ! -e $DOTFILES_BACKUP_DIR ]]; then
 	mkdir $DOTFILES_BACKUP_DIR
 fi
