@@ -96,5 +96,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Exports
+
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 cd
 
