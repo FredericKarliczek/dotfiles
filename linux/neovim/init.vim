@@ -71,9 +71,6 @@ ino kj <Esc>
 
 let mapleader="\<Space>"
 
-" Use completion-nvim in every buffer
-autocmd BufEnter * lua require'completion'.on_attach()
-
 lua << EOF
 -- ### PLUGIN CONFIGURATIONS
 require('lsp-config')
