@@ -21,12 +21,18 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-
+    "" Colorschemes
     Plug 'morhetz/gruvbox'
+    Plug 'lifepillar/vim-solarized8'
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'tyrannicaltoucan/vim-deep-space'
+    Plug 'joshdick/onedark.vim'
+    Plug 'Mofiqul/vscode.nvim'
     "" VimWiki
     Plug 'vimwiki/vimwiki'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
@@ -34,7 +40,7 @@ call plug#end()
 " VimWiki configuration
 let g:vimwiki_list = [{'path': 'C:\DATA\Git Repositorys (private)\DigitalBrain\vaults\Digital Garden\', 'syntax': 'markdown', 'ext': '.md'}]
 
-let g:airline_theme = 'codedark'
+let g:airline_theme = 'dark'
 
 " General
 set clipboard+=unnamedplus
@@ -44,7 +50,9 @@ set noswapfile
 set number
 set relativenumber
 syntax on
-colorscheme codedark
+set termguicolors
+let g:vscode_style = "dark"
+colorscheme vscode
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
@@ -68,7 +76,6 @@ ino <right> <Nop>
 ino <up> <Nop>
 
 ino jk <Esc>
-ino kj <Esc>
 
 let mapleader="\<Space>"
 
