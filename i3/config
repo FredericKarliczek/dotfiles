@@ -5,15 +5,15 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# move focused workspace between monitors
-bindsym $mod+Ctrl+greater move workspace to output right
-bindsym $mod+Ctrl+less move workspace to output left
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+
+# move focused workspace between monitors
+bindsym $mod+Ctrl+greater move workspace to output right
+bindsym $mod+Ctrl+less move workspace to output left
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -43,8 +43,8 @@ exec --no-startup-id picom --config /home/$USER/.config/picom.conf
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status && dunstify -h string:x-dunst-stack-tag:audio "Volume: [`awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master)`]" -h int:value:"`awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master) | sed 's/.$//'`"
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status && dunstify -h string:x-dunst-stack-tag:audio "Volume: [`awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master)`]" -h int:value:"`awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master) | sed 's/.$//'`"
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
