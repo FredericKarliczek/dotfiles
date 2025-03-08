@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Start installing scripts to ~/.local/bin"
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+for entry in "$script_dir"/*
+do
+    base_name=$(basename ${entry})
+    if [[ $base_name != "install" ]]; then
+        ln -s $entry ~/.local/bin/${base_name}
+    fi
+done
