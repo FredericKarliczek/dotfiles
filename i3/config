@@ -120,11 +120,11 @@ bindsym $mod+m focus output left
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:Terminal"
-set $ws2 "2:Browser"
-set $ws3 "3:Code"
-set $ws4 "4:Email"
-set $ws5 "5:Keepass"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -136,10 +136,7 @@ set $ws10 "10"
 exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
 exec --no-startup-id i3-msg 'workspace $ws1; exec ghostty'
 
-exec --no-startup-id code
 exec --no-startup-id thunderbird
-
-assign [class="Code"] $ws3
 assign [class="org.mozilla.thunderbird"] $ws4
 
 # switch to workspace
@@ -203,8 +200,13 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
+#Hide window title bar
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
+
 bar {
-    position bottom
+    position top
     status_command i3status --config ~/.config/i3status/config
     colors {
         background #282A36
