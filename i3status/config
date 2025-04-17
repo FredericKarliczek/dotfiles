@@ -9,8 +9,8 @@ general {
 #order += "wireless _first_"
 #order += "ethernet eth0"
 order += "battery 0"
+order += "fedora_updates"
 order += "tztime local"
-order += "tztime berlin"
 
 #wireless _first_ {
 #        format_up = "W: (%quality at %essid, %bitrate) %ip"
@@ -46,6 +46,7 @@ battery 0 {
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"
         hide_if_equals_localtime = true
+        on_click 1 = "exec gnome-calendar"
 }
 
 tztime berlin {

@@ -41,6 +41,10 @@ exec --no-startup-id nm-applet
 # Picom
 exec --no-startup-id picom --config /home/$USER/.config/picom.conf
 
+# Nightlight
+exec --no-startup-id redshift
+
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status && dunstify -h string:x-dunst-stack-tag:audio "Volume: [`awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master)`]" -h int:value:"`awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master) | sed 's/.$//'`"
@@ -207,7 +211,7 @@ for_window [class="^.*"] border pixel 1
 
 bar {
     position top
-    status_command i3status --config ~/.config/i3status/config
+    status_command py3status --config ~/.config/py3status/config
     colors {
         background #282A36
         statusline #F8F8F2
@@ -228,3 +232,4 @@ bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F
 bindsym $mod+Shift+d exec rofi -show drun
 # Shortcut for Lockscreen
 bindsym $mod+x exec /home/$USER/.config/scripts/lock
+
