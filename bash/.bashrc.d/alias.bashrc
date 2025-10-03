@@ -7,3 +7,5 @@ alias gs="git status"
 alias ga="git add"
 alias gap="git add -p"
 alias gp="git push"
+
+alias ts="tmux-sessionizer"
