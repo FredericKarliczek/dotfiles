@@ -71,3 +71,6 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Highlight a column at char 100
+vim.opt.colorcolumn = "100"

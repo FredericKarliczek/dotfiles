@@ -335,7 +335,7 @@ require("lazy").setup({
 
                     -- Fuzzy find all the symbols in your current document.
                     --  Symbols are things like variables, functions, types, etc.
-                    map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+                    -- map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 
                     -- Fuzzy find all the symbols in your current workspace.
                     --  Similar to document symbols, except searches over your entire project.
@@ -451,6 +451,14 @@ require("lazy").setup({
                             -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
                             -- diagnostics = { disable = { 'missing-fields' } },
                         },
+                    },
+                },
+
+                tinymist = {
+                    settings = {
+                        formatterMode = "typstyle",
+                        exportPdf = "onType",
+                        semanticTokens = "disable",
                     },
                 },
             }
@@ -752,7 +760,7 @@ require("lazy").setup({
                 --  the list of additional_vim_regex_highlighting and disabled languages for indent.
                 additional_vim_regex_highlighting = { "ruby" },
             },
-            indent = { enable = true, disable = { "ruby" } },
+            indent = { enable = false, disable = { "ruby" } },
         },
         -- There are additional nvim-treesitter modules that you can use to interact
         -- with nvim-treesitter. You should go explore a few and see what interests you:
@@ -809,6 +817,21 @@ require("lazy").setup({
         },
     },
 })
+
+vim.diagnostic.config({
+    underline = true,
+    float = {
+        border = "rounded",
+    },
+})
+
+vim.keymap.set("n", "<leader>ds", vim.diagnostic.open_float, { desc = "[D]iagnostics [S]how" })
+vim.keymap.set("n", "<leader>dn", function()
+    vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "[D]iagnostics [N]ext" })
+vim.keymap.set("n", "<leader>dp", function()
+    vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "[D]iagnostics [P]revious" })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
