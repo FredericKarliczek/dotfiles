@@ -35,6 +35,15 @@ PATH="$PATH":"$HOME/.local/scripts/"
 bind '"\C-f":"tmux-sessionizer\n"'
 
 PATH="$PATH":"$HOME/.cargo/bin/"
+PATH="$PATH":"$HOME/Odin"
+
+printf '\033[5 q'
+
+# Use bash-completion, if available, and avoid double-sourcing
+[[ $PS1 &&
+  ! ${BASH_COMPLETION_VERSINFO:-} &&
+  -f /usr/share/bash-completion/bash_completion ]] &&
+    . /usr/share/bash-completion/bash_completion
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
